@@ -6,7 +6,7 @@ provider "aws" {
 module "vpc" {
   source = "./modules/vpc"
 
-  vpc_cidr_block = var.vpc_cidr
+  vpc_cidr_block      = var.vpc_cidr
   public_subnet_cidr  = var.public_subnet_cidr
   private_subnet_cidr = var.private_subnet_cidr
 }
@@ -15,7 +15,7 @@ module "vpc" {
 module "alb" {
   source = "./modules/alb"
 
-  vpc_id     = module.vpc.vpc_id
+  vpc_id           = module.vpc.vpc_id
   public_subnet_id = module.vpc.public_subnet_id
 }
 
@@ -23,7 +23,19 @@ module "alb" {
 module "ec2" {
   source = "./modules/ec2"
 
-  vpc_id     = module.vpc.vpc_id
+  vpc_id            = module.vpc.vpc_id
   private_subnet_id = module.vpc.private_subnet_id
-  alb_sg_id  = module.alb.alb_sg_id
+  alb_sg_id         = module.alb.alb_sg_id
+}
+
+# Call WAF Module
+module "waf" {
+  source = "./modules/waf"
+}
+
+# Call CloudFront Module
+module "cloudfront" {
+  source       = "./modules/cloudfront"
+  alb_dns_name = module.alb.alb_dns_name
+  waf_arn      = module.waf.waf_arn
 }

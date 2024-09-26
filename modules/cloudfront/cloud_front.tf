@@ -5,6 +5,7 @@ resource "aws_cloudfront_distribution" "app_distribution" {
   }
 
   enabled = true
+
   default_cache_behavior {
     allowed_methods  = ["GET", "POST", "PATCH", "DELETE"]
     cached_methods   = ["GET", "POST", "PATCH", "DELETE"]
@@ -22,4 +23,6 @@ resource "aws_cloudfront_distribution" "app_distribution" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+
+  web_acl_id = var.waf_arn  # Associate WAF with CloudFront
 }

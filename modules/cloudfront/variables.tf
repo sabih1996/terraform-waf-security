@@ -1,3 +1,3 @@
-variable "alb_dns_name" {
+variable "waf_arn" {
   type = string
 }
