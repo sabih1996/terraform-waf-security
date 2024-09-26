@@ -6,8 +6,8 @@ resource "aws_cloudfront_distribution" "app_distribution" {
 
   enabled = true
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
-    cached_methods   = ["GET", "HEAD"]
+    allowed_methods  = ["GET", "POST", "PATCH", "DELETE"]
+    cached_methods   = ["GET", "POST", "PATCH", "DELETE"]
     target_origin_id = "alb_origin"
     viewer_protocol_policy = "redirect-to-https"
   }
