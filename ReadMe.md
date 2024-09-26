@@ -22,4 +22,8 @@
 │   │   ├── cloudfront.tf
 │   │   ├── outputs.tf
 │   │   ├── variables.tf
+│   ├── waf/            # NEW WAF module
+│   │   ├── waf.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
 ```
