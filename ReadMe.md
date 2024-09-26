@@ -139,7 +139,7 @@ Better to configure all these steps on terraform cloud add your secrects as vari
 1. **Right-size EC2 Instances:** Use auto-scaling and right-sizing to ensure you are not over-provisioning instances for your workload.
 2. **Leverage Reserved Instances or Spot Instances:** Use Reserved Instances or Spot Instances to save significantly on EC2 instance costs.
 3. **Optimize WAF Rules:** Simplify WAF rules to only those critical for your security needs to reduce the number of inspections.
-4. **Cache More Content in CloudFront:**Optimize caching policies to reduce backend hits to your ALB and EC2, lowering the data transfer and compute costs.
+4. **Cache More Content in CloudFront:** Optimize caching policies to reduce backend hits to your ALB and EC2, lowering the data transfer and compute costs.
 5. **Monitor Costs with AWS Cost Explorer:** Use AWS Cost Explorer to regularly track and analyze where the costs are going, and make adjustments accordingly.
 6. **Use Lambda or Fargate for Low-Traffic or Intermittent Workloads:**  Consider migrating smaller workloads to Lambda or Fargate if the traffic is variable or not continuous. This could eliminate the need for always-on EC2 instances.
 7. **Turn Off Unused Resources:** Ensure that any non-production environments are turned off when not in use, like development or staging EC2 instances, to avoid unnecessary charges.
