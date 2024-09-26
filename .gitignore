@@ -1,0 +1,61 @@
+# Ignore Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+.terraform.lock.hcl
+
+# Ignore Crash log
+crash.log
+
+# Ignore override files as they are usually used to override resources locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore auto-generated files by Terraform providers
+.terraformrc
+terraform.rc
+
+# Ignore any .env files or environment-specific config
+.env
+.env.*
+
+# Ignore log files and system files
+*.log
+*.DS_Store
+
+# Ignore SSH key files (if any are being generated)
+*.pem
+*.key
+
+# Ignore local directories for AWS CLI
+.aws/
+
+# Ignore any credentials or AWS-related configuration files
+.credentials
+.aws/credentials
+.aws/config
+
+# Ignore editor/IDE files
+.vscode/
+.idea/
+
+# Ignore build artifacts
+node_modules/
+dist/
+package-lock.json
+
+# Ignore Docker-related files (if applicable)
+docker-compose.override.yml
+docker-compose.yml
+.dockerignore
+
+# Ignore any Python virtual environment (if used for scripting)
+venv/
+__pycache__/
+*.py[cod]
+
+# Ignore temporary system files
+Thumbs.db
